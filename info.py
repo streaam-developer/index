@@ -8,5 +8,5 @@ ADMINS = [5764988016, 6206665581]
 FORWARD_CHAT = int("-1001918999034")
 DOMAIN = "https://test.test/"
 DATABASE_URL = "mongodb+srv://fehebaw351:nHbjrujWqgqLR58H@cluster0.lekn97z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-DATABASE_NAME = "Cluster0"
+DATABASE_NAME = "cluster0"
 FLOG_CHANNEL = int("-1001918999034")
