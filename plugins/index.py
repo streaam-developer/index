@@ -103,21 +103,27 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot, skip):
                         await asyncio.sleep(e.value)
                 if message.empty:
                     deleted += 1
+                    await asyncio.sleep(1)
                     continue
                 elif not message.media:
                     no_media += 1
+                    await asyncio.sleep(1)
                     continue
                 elif message.media not in [enums.MessageMediaType.VIDEO, enums.MessageMediaType.DOCUMENT]:
                     unsupported += 1
+                    await asyncio.sleep(0.1)
                     continue
                 media = message.document or message.video
                 if not media:
                     unsupported += 1
+                    await asyncio.sleep(1)
                     continue
                 elif not (str(media.file_name).lower()).endswith(tuple(['mp4', 'mkv'])):
                     unsupported += 1
+                    await asyncio.sleep(1)
                     continue
                 sts = await save_file(bot, media)
+                await asyncio.sleep(1)
                 if sts == 'suc':
                     total_files += 1
                 elif sts == 'dup':
